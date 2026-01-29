@@ -91,4 +91,5 @@ Rails.application.configure do
   # === custom config ===
   # Removes sass sprocklets issue, a solidus dependency.
   config.assets.css_compressor = nil
+  config.active_storage.service = :digitalocean
 end
