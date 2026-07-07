@@ -49,3 +49,7 @@
 # Ignore Docker-related files
 /.dockerignore
 /Dockerfile*
+
+# Ignore schema files to force migrations from scratch in production
+/db/schema.rb
+/db/*_schema.rb
