@@ -72,5 +72,5 @@ Rails.application.configure do
   # === custom config ===
 
   # Remove it after confirm DO is working
-  config.active_storage.service = :digitalocean
+  # config.active_storage.service = :digitalocean
 end
