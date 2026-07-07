@@ -41,23 +41,23 @@ products_data = [
 
 products_data.each_with_index do |data, index|
   sku = "OFFICE-#{1000 + index}"
-  
+
   # Find or create product
   product = Spree::Product.find_or_initialize_by(name: data[:name])
-  
+
   if product.new_record?
     product.description = data[:desc]
     product.price = data[:price]
     product.shipping_category = shipping_category
     product.available_on = Time.current - 1.day
     product.sku = sku
-    
+
     product.save!
     puts "Created product: #{product.name} (SKU: #{sku})"
-    
+
     # Assign Taxon
     product.taxons << data[:taxon] unless product.taxons.include?(data[:taxon])
-    
+
     # Add Stock (100 units) to Default Stock Location
     variant = product.master
     stock_item = stock_location.stock_items.find_or_create_by!(variant: variant)
