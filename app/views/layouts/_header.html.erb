@@ -51,7 +51,7 @@
             current_taxon: taxon,
             max_level: 1,
             item_classes: 'font-sans-md',
-            current_item_classes: 'text-solidus-red',
+            current_item_classes: 'text-primary',
             )) if categories %>
         <% end %>
 
@@ -59,12 +59,7 @@
         <div class="flex justify-between">
           <%= render "shared/navigation/theme_switcher" %>
 
-          <%= link_to "https://solidus.io", class:"flex flex-row items-center gap-1" do %>
-            <span class="font-semibold text-black dark:text-white">solidus.io</span>
-            <svg class='w-5 h-5 fill-black dark:fill-white'>
-              <use xlink:href="<%= image_path('remixicon.symbol.svg') %>#ri-arrow-right-up-line"></use>
-            </svg>
-          <% end %>
+
         </div>
         </div>
       </nav>
