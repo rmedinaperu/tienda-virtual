@@ -68,12 +68,14 @@ Para que Rails pueda descifrar el archivo `config/credentials.yml.enc` en produc
      echo "RAILS_MASTER_KEY=$(cat config/master.key)" > .env
      ```
 
-#### Pruebas locales sin SSL (HTTP)
-Por defecto, la aplicación en producción fuerza las conexiones a través de SSL. Si estás realizando pruebas en local desde `http://localhost` (HTTP sin certificados de seguridad), debes agregar las siguientes variables a tu archivo `.env` para evitar errores de tipo `InvalidAuthenticityToken` al iniciar sesión:
+#### Pruebas locales sin SSL (HTTP) y Almacenamiento Local
+Por defecto, la aplicación en producción fuerza las conexiones a través de SSL y utiliza almacenamiento en la nube (DigitalOcean). Si estás realizando pruebas en local desde `http://localhost` (HTTP sin certificados de seguridad y usando almacenamiento local en disco), debes agregar las siguientes variables a tu archivo `.env`:
 ```env
 RAILS_ASSUME_SSL=false
 RAILS_FORCE_SSL=false
+ACTIVE_STORAGE_SERVICE=local
 ```
+
 
 ### Pasos
 

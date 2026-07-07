@@ -22,7 +22,9 @@ services:
       RAILS_MASTER_KEY: ${RAILS_MASTER_KEY}
       RAILS_ASSUME_SSL: ${RAILS_ASSUME_SSL}
       RAILS_FORCE_SSL: ${RAILS_FORCE_SSL}
+      ACTIVE_STORAGE_SERVICE: ${ACTIVE_STORAGE_SERVICE}
       DATABASE_URL: mysql2://root:password@db/store_production
+
 
       DATABASE_HOST: db
       DATABASE_USERNAME: root
