@@ -52,4 +52,3 @@
 
 # Ignore schema files to force migrations from scratch in production
 /db/schema.rb
-/db/*_schema.rb
