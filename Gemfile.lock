@@ -259,7 +259,7 @@ GEM
       mime-types
       mimemagic (~> 0.3.0)
       terrapin (~> 0.6.0)
-    language_server-protocol (3.17.0.5)
+    language_server-protocol (3.17.0.6)
     launchy (3.1.1)
       addressable (~> 2.8)
       childprocess (~> 5.0)
@@ -331,8 +331,8 @@ GEM
     omnes (0.2.2)
     orm_adapter (0.5.0)
     ostruct (0.6.3)
-    parallel (1.27.0)
-    parser (3.3.10.1)
+    parallel (1.28.0)
+    parser (3.3.11.1)
       ast (~> 2.4.1)
       racc
     polyglot (0.3.5)
@@ -409,7 +409,7 @@ GEM
       prism (>= 1.6.0)
       rbs (>= 4.0.0)
       tsort
-    regexp_parser (2.11.3)
+    regexp_parser (2.12.0)
     reline (0.6.3)
       io-console (~> 0.5)
     responders (3.2.0)
@@ -448,7 +448,7 @@ GEM
       rubocop-ast (>= 1.49.0, < 2.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 2.4.0, < 4.0)
-    rubocop-ast (1.49.0)
+    rubocop-ast (1.50.0)
       parser (>= 3.3.7.2)
       prism (~> 1.7)
     rubocop-capybara (2.22.1)
@@ -461,7 +461,7 @@ GEM
       lint_roller (~> 1.1)
       rubocop (>= 1.75.0, < 2.0)
       rubocop-ast (>= 1.47.1, < 2.0)
-    rubocop-rails (2.34.3)
+    rubocop-rails (2.35.5)
       activesupport (>= 4.2.0)
       lint_roller (~> 1.1)
       rack (>= 1.1)
@@ -705,7 +705,7 @@ DEPENDENCIES
   rspec-rails
   rubocop (~> 1.0)
   rubocop-performance (~> 1.5)
-  rubocop-rails (~> 2.3)
+  rubocop-rails (~> 2.35)
   rubocop-rails-omakase
   rubocop-rspec (~> 2.0)
   selenium-webdriver
