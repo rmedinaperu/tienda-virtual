@@ -73,11 +73,9 @@ Para que Rails pueda descifrar el archivo `config/credentials.yml.enc` en produc
    ```bash
    docker compose up --build -d
    ```
-2. Inicializa la base de datos MySQL (dentro del contenedor web):
-   ```bash
-   docker compose exec web bin/rails db:prepare
-   ```
-3. Carga los datos de prueba (opcional):
+   *(Nota: El contenedor web ejecutará automáticamente `bin/rails db:create db:migrate` en su inicio para configurar la base de datos).*
+
+2. Carga los datos de prueba (opcional):
    ```bash
    docker compose exec web bin/rails db:seed
    ```
@@ -85,8 +83,10 @@ Para que Rails pueda descifrar el archivo `config/credentials.yml.enc` en produc
    ```bash
    docker compose exec web bin/rails runner script/add_placeholder_images.rb
    ```
-4. Ingresa a la aplicación. Nginx estará escuchando en el puerto `80`.
+
+3. Ingresa a la aplicación. Nginx estará escuchando en el puerto `80`.
    - Abre tu navegador y visita: `http://localhost` (o la dirección IP de tu máquina Kali Linux)
+
 
 
 ### Detener los contenedores
