@@ -1,0 +1,13 @@
+/* Legacy Admin */
+figure.sidebar-logo img {
+  width: 140px !important;
+  max-width: 140px !important;
+  height: auto !important;
+}
+
+/* New Admin (redirection) */
+img[src="/admin/logo"] {
+  width: 140px !important;
+  max-width: 140px !important;
+  height: auto !important;
+}

@@ -14,8 +14,12 @@
 
     <%= javascript_importmap_tags %>
 
-    <%= favicon_link_tag '/storefront_favicon.svg', type: 'image/svg+xml', rel: 'icon' %>
-    <%= favicon_link_tag '/storefront_favicon.ico', rel: 'icon', type: 'image/ico' %>
+    <% if current_store&.favicon&.attached? %>
+      <%= favicon_link_tag main_app.url_for(current_store.favicon) %>
+    <% else %>
+      <%= favicon_link_tag '/storefront_favicon.svg', type: 'image/svg+xml', rel: 'icon' %>
+      <%= favicon_link_tag '/storefront_favicon.ico', rel: 'icon', type: 'image/ico' %>
+    <% end %>
 
     <script>
       const lsTheme = localStorage.getItem('theme') || 'light'
