@@ -5,5 +5,6 @@
  *
  *= require spree/backend
  *= require_self
+ *= require spree/backend/admin_custom_logo
  *= require_tree .
 */

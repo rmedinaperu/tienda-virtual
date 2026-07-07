@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  mount SolidusAdmin::Engine, at: '/admin', constraints: ->(req) {
-    req.cookies['solidus_admin'] != 'false' &&
-    req.params['solidus_admin'] != 'false'
+  mount SolidusAdmin::Engine, at: "/admin", constraints: ->(req) {
+    req.cookies["solidus_admin"] != "false" &&
+    req.params["solidus_admin"] != "false"
   }
-  scope(path: '/') { draw :storefront }
+  scope(path: "/") { draw :storefront }
   # This line mounts Solidus's routes at the root of your application.
   #
   # Unless you manually picked only a subset of Solidus components, this will mount routes for:
@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   #
   # If you would like to change where this engine is mounted, simply change the :at option to something different.
   # We ask that you don't use the :as option here, as Solidus relies on it being the default of "spree"
-  mount Spree::Core::Engine, at: '/'
+  mount Spree::Core::Engine, at: "/"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -29,4 +29,11 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+end
+
+Spree::Core::Engine.routes.draw do
+  namespace :admin do
+    get "/logo", to: "store_settings#logo", as: :logo
+    resource :store_settings, only: [ :edit, :update ]
+  end
 end

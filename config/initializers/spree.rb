@@ -2,7 +2,7 @@
 # See http://docs.solidus.io/Spree/AppConfiguration.html for details
 
 # Solidus version defaults for preferences that are not overridden
-Spree.load_defaults '4.6.2'
+Spree.load_defaults "4.6.2"
 
 Spree.config do |config|
   # Core:
@@ -18,8 +18,8 @@ Spree.config do |config|
   # config.inventory_cache_threshold = 3
 
   # Configure adapter for attachments on products and taxons (use ActiveStorageAttachment or PaperclipAttachment)
-  config.image_attachment_module = 'Spree::Image::ActiveStorageAttachment'
-  config.taxon_attachment_module = 'Spree::Taxon::ActiveStorageAttachment'
+  config.image_attachment_module = "Spree::Image::ActiveStorageAttachment"
+  config.taxon_attachment_module = "Spree::Taxon::ActiveStorageAttachment"
 
   # Defaults
   # Permission Sets:
@@ -31,7 +31,7 @@ Spree.config do |config|
   # Admin:
 
   # Custom logo for the admin
-  # config.admin_interface_logo = "logo/solidus.svg"
+  config.admin_interface_logo = "/admin/logo"
 
   # Payment gateway credentials can be configured statically here and referenced from
   # the admin. They can also be fully configured from the admin.
@@ -50,19 +50,17 @@ Spree.config do |config|
 end
 
 Spree::Backend::Config.configure do |config|
-  config.locale = 'en'
+  config.locale = "en"
 
   # Uncomment and change the following configuration if you want to add
   # a new menu item:
   #
-  # config.menu_items << config.class::MenuItem.new(
-  #   label: :my_reports,
-  #   icon: 'file-text-o', # see https://fontawesome.com/v4/icons/
-  #   url: :my_admin_reports_path,
-  #   condition: -> { can?(:admin, MyReports) },
-  #   partial: 'spree/admin/shared/my_reports_sub_menu',
-  #   match_path: '/reports',
-  # )
+  config.menu_items << config.class::MenuItem.new(
+    label: "Config",
+    icon: "cogs",
+    url: :edit_admin_store_settings_path,
+    match_path: "/store_settings"
+  )
 
   # Custom frontend product path
   #
