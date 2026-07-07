@@ -37,3 +37,6 @@
 !/app/assets/builds/.keep
 app/assets/builds/solidus_admin/
 /config/credentials/production.key
+
+# Ignore Kamal directory
+/.kamal
