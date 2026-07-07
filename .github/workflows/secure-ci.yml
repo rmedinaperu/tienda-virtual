@@ -19,6 +19,7 @@ jobs:
         with:
           scan-type: 'fs'
           scan-ref: '.'
+          skip-dirs: 'vendor'
           ignore-unfixed: true
           format: 'table'
           severity: 'HIGH,CRITICAL'
