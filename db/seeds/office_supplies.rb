@@ -60,9 +60,13 @@ products_data.each_with_index do |data, index|
     
     # Add Stock (100 units) to Default Stock Location
     variant = product.master
-    stock_item = stock_location.stock_items.find_or_initialize_by(variant: variant)
-    stock_item.count_on_hand = 100
-    stock_item.save!
+    stock_item = stock_location.stock_items.find_or_create_by!(variant: variant)
+    target_count = 100
+    adjustment = target_count - stock_item.count_on_hand
+    if adjustment != 0
+      stock_item.stock_movements.create!(quantity: adjustment)
+    end
+
   else
     puts "Product already exists: #{product.name}"
   end
