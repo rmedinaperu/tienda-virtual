@@ -1,6 +1,6 @@
 # Store Project
 
-Bienvenido al repositorio de la tienda en línea. Este proyecto está basado en **Ruby on Rails** y utiliza **Solidus** como plataforma de comercio electrónico. 
+Bienvenido al repositorio de la tienda en línea. Este proyecto está basado en **Ruby on Rails** y utiliza **Solidus** como plataforma de comercio electrónico.   
 
 A continuación encontrarás las instrucciones para levantar el proyecto en diferentes entornos.
 
