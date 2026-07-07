@@ -41,6 +41,32 @@ El proyecto está configurado para ejecutarse en contenedores utilizando **Nginx
 
 ### Prerrequisitos
 - Tener instalado `docker` y `docker compose` en la máquina.
+- Contar con la clave maestra de producción (`RAILS_MASTER_KEY`).
+
+#### Configuración de la Clave Maestra (`RAILS_MASTER_KEY`)
+Para que Rails pueda descifrar el archivo `config/credentials.yml.enc` en producción, debes configurar la clave maestra de alguna de las siguientes maneras:
+
+* **Opción A: Usar la clave original (Recomendado)**
+  Si ya tienes la clave original que encriptó el archivo `config/credentials.yml.enc`, crea un archivo `.env` en la raíz del proyecto y colócala allí:
+  ```bash
+  echo "RAILS_MASTER_KEY=tu_clave_maestra_aqui" > .env
+  ```
+
+* **Opción B: Generar una nueva clave y credenciales desde cero**
+  Si no cuentas con la clave original, Rails no podrá iniciar. Debes restablecer la configuración de credenciales de forma local:
+  1. Elimina el archivo encriptado existente:
+     ```bash
+     rm config/credentials.yml.enc
+     ```
+  2. Genera una nueva clave y un nuevo archivo de credenciales (asegúrate de estar usando Ruby compatible en tu máquina local, por ejemplo usando `frum`):
+     ```bash
+     EDITOR=nano bin/rails credentials:edit
+     ```
+     *(Guarda y cierra el editor. Esto creará el archivo `config/master.key` con tu nueva clave).*
+  3. Coloca esta nueva clave en tu archivo `.env` para que Docker Compose la reconozca:
+     ```bash
+     echo "RAILS_MASTER_KEY=$(cat config/master.key)" > .env
+     ```
 
 ### Pasos
 1. Construye las imágenes y levanta los contenedores en segundo plano:
@@ -54,10 +80,14 @@ El proyecto está configurado para ejecutarse en contenedores utilizando **Nginx
 3. Carga los datos de prueba (opcional):
    ```bash
    docker compose exec web bin/rails db:seed
+   ```
+   *(Opcional: Si quieres generar imágenes de prueba para los productos)*:
+   ```bash
    docker compose exec web bin/rails runner script/add_placeholder_images.rb
    ```
 4. Ingresa a la aplicación. Nginx estará escuchando en el puerto `80`.
-   - Abre tu navegador y visita: `http://localhost`
+   - Abre tu navegador y visita: `http://localhost` (o la dirección IP de tu máquina Kali Linux)
+
 
 ### Detener los contenedores
 Para apagar los servicios sin perder los datos de MySQL, ejecuta:
