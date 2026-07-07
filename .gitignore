@@ -40,3 +40,6 @@ app/assets/builds/solidus_admin/
 
 # Ignore Kamal directory
 /.kamal
+
+# Ignore local bundler gems
+/vendor/bundle/
