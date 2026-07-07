@@ -412,6 +412,7 @@ GEM
     regexp_parser (2.11.3)
     reline (0.6.3)
       io-console (~> 0.5)
+    resolv (0.7.1)
     responders (3.2.0)
       actionpack (>= 7.0)
       railties (>= 7.0)
@@ -631,11 +632,11 @@ GEM
     terrapin (0.6.0)
       climate_control (>= 0.0.3, < 1.0)
     thor (1.5.0)
-    thruster (0.1.17)
-    thruster (0.1.17-aarch64-linux)
-    thruster (0.1.17-arm64-darwin)
-    thruster (0.1.17-x86_64-darwin)
-    thruster (0.1.17-x86_64-linux)
+    thruster (0.1.22)
+    thruster (0.1.22-aarch64-linux)
+    thruster (0.1.22-arm64-darwin)
+    thruster (0.1.22-x86_64-darwin)
+    thruster (0.1.22-x86_64-linux)
     tilt (2.7.0)
     timeout (0.6.1)
     tsort (0.2.0)
@@ -668,6 +669,7 @@ GEM
     xpath (3.2.0)
       nokogiri (~> 1.8)
     zeitwerk (2.8.2)
+    zlib (3.2.3)
 
 PLATFORMS
   aarch64-linux
@@ -689,6 +691,7 @@ DEPENDENCIES
   capybara-screenshot (~> 1.0)
   database_cleaner (~> 2.0)
   debug
+  erb (>= 4.0.4.1)
   factory_bot (>= 4.8)
   factory_bot_rails
   ffaker (~> 2.13)
@@ -696,10 +699,12 @@ DEPENDENCIES
   jbuilder
   kamal
   mysql2 (~> 0.5)
+  net-imap (>= 0.6.4)
   propshaft
   puma (>= 5.0)
   rails (~> 8.0.4)
   rails-controller-testing (~> 1.0.5)
+  resolv (>= 0.6.1)
   responders
   rspec-activemodel-mocks (~> 1.1.0)
   rspec-rails
@@ -722,8 +727,10 @@ DEPENDENCIES
   thruster
   turbo-rails
   tzinfo-data
+  uri (>= 1.0.4)
   view_component (~> 3.0)
   web-console
+  zlib (>= 3.2.3)
 
 BUNDLED WITH
    2.6.2

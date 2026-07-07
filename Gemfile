@@ -87,3 +87,13 @@ end
 
 gem "solidus_admin", ">= 0.2"
 gem "aws-sdk-s3"
+
+gem "erb", ">= 4.0.4.1"
+
+gem "net-imap", ">= 0.6.4"
+
+gem "resolv", ">= 0.6.1"
+
+gem "uri", ">= 1.0.4"
+
+gem "zlib", ">= 3.2.3"
