@@ -1,4 +1,4 @@
-# Store Project
+# Store Project  
 
 Bienvenido al repositorio de la tienda en línea. Este proyecto está basado en **Ruby on Rails** y utiliza **Solidus** como plataforma de comercio electrónico.   
 
